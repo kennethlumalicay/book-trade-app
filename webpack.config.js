@@ -4,8 +4,8 @@ var webpack = require('webpack');
 module.exports = {
     devServer: {
         inline: true,
-        contentBase: './src',
-        port: 3000
+        contentBase: path.resolve(__dirname),
+        port: 5000
     },
     entry: './dev/client.js',
     output: {

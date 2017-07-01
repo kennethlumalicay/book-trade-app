@@ -2,10 +2,17 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var User = new Schema({
-	twitter: {
+	user: {
 		id: String,
 		displayName: String,
-		username: String
+		username: String,
+		fullName: String,
+		city: String,
+		state: String,
+		books: {
+			owned: [String],
+			requested: [String]
+		}
 	}
 }, {collection: 'users'});
 

@@ -8,6 +8,7 @@ import mongoose from 'mongoose';
 import passport from 'passport';
 import session from 'express-session';
 import bodyParser from 'body-parser';
+import { StaticRouter } from 'react-router-dom';
 var mongoStore = require('connect-mongo')(session);
 require('dotenv').load();
 
@@ -21,6 +22,7 @@ require('./js/config/passport')(passport);
 var app = express();
 mongoose.connect(process.env.MONGO_URI)
 mongoose.Promise = global.Promise;
+
 // Session
 app.use(session({
   secret: 'secretKLM',
@@ -57,19 +59,21 @@ routes(app, passport);
 app.use(handleRender);
 function handleRender(req, res) {
   let initialState = {
-    'user': user ? req.user.twitter : null
+    'user': req.user ? req.user.user : null
   };
 
   const store = Store(initialState);
+  const context = {};
 
   const html = renderToString(
     <Provider store={store}>
-      <App />
+      <StaticRouter location={req.url} context={context}>
+        <App />
+      </StaticRouter>
     </Provider>
   );
 
   const preloadedState = store.getState();
-
   res.send(renderFullPage(html, preloadedState));
 }
 
@@ -77,9 +81,10 @@ function renderFullPage(html, preloadedState) {
 	return `
     <html>
       <head>
-        <title>Bar hopping?</title>
-        <script src="https://use.fontawesome.com/663123f680.js"></script>
-        <link href="/src/index.css" rel="stylesheet" type="text/css">
+        <title>Book trading</title>
+        <link href="/src/css/main.css" rel="stylesheet" type="text/css">
+        <link href="/src/css/content.css" rel="stylesheet" type="text/css">
+        <link href="/src/css/books.css" rel="stylesheet" type="text/css">
       </head>
       <body>
         <div id="root">${html}</div>
@@ -88,6 +93,7 @@ function renderFullPage(html, preloadedState) {
           // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations
           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
         </script>
+        <script src="https://use.fontawesome.com/663123f680.js"></script>
         <script src="/src/bundle.min.js"></script>
       </body>
     </html>

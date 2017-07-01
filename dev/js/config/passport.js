@@ -20,15 +20,15 @@ module.exports = function (passport) {
 	},
 	function (token, refreshToken, profile, done) {
 		process.nextTick(function () {
-			User.findOne({ 'twitter.id': profile.id }, function (err, user) {
+			User.findOne({ 'user.id': profile.id }, function (err, user) {
 				if (err) return done(err);
 				if (user) return done(null, user);
 				else {
 					var newUser = new User();
 
-					newUser.twitter.id = profile.id;
-					newUser.twitter.username = profile.username;
-					newUser.twitter.displayName = profile.displayName;
+					newUser.user.id = profile.id;
+					newUser.user.username = profile.username;
+					newUser.user.displayName = profile.displayName;
 					newUser.save(function (err) {
 						if (err) throw err;
 						return done(null, newUser);
