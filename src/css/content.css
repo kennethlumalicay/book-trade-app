@@ -13,7 +13,7 @@
 	transition: all 0.5s ease-in-out;
 }
 #nav-div > i {
-	font-size: 1.5em;
+	font-size: 2em;
 }
 #nav-div > i:hover {
 	cursor: pointer;
