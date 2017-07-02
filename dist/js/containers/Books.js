@@ -302,28 +302,33 @@ var Books = (_dec = (0, _reactRedux.connect)(function (state) {
 					_react2.default.createElement(
 						'h1',
 						null,
-						'My books'
+						'My books (click to remove)'
 					),
 					_react2.default.createElement(
 						'div',
 						{ className: 'book-list' },
 						renderMyBooks
 					),
-					_react2.default.createElement('input', { type: 'text', className: 'text-input', placeholder: 'Add book', onKeyDown: this.addBook.bind(this) })
+					_react2.default.createElement('input', { type: 'text', className: 'text-input', placeholder: 'Search book here', onKeyDown: this.addBook.bind(this) })
 				),
 				_react2.default.createElement(
 					'div',
 					{ className: "book-container" + (myTrade.length ? "" : " hidden") + (this.state.showReceivedRequest ? " request-open" : " request-closed" + (myTradePending.length ? " pending" : "")) },
 					_react2.default.createElement(
 						'h1',
-						{ onClick: function onClick() {
+						{ className: 'h1-click', onClick: function onClick() {
 								return _this2.setState({ showReceivedRequest: !_this2.state.showReceivedRequest });
 							} },
 						'Received request ',
 						_react2.default.createElement(
 							'span',
-							{ className: "counter" + (!this.state.showReceivedRequest ? "" : " hidden") },
+							{ className: "counter" + (myTradePending.length && !this.state.showReceivedRequest ? "" : " hidden") },
 							myTradePending.length ? myTradePending.length : null
+						),
+						_react2.default.createElement(
+							'span',
+							{ className: this.state.showReceivedRequest ? "hidden" : "" },
+							' (click to view)'
 						)
 					),
 					_react2.default.createElement(
@@ -368,14 +373,19 @@ var Books = (_dec = (0, _reactRedux.connect)(function (state) {
 					{ className: "book-container" + (sentTrade.length ? "" : " hidden") + (this.state.showSentRequest ? " request-open" : " request-closed" + (sentTradePending.length ? " pending" : "")) },
 					_react2.default.createElement(
 						'h1',
-						{ onClick: function onClick() {
+						{ className: 'h1-click', onClick: function onClick() {
 								return _this2.setState({ showSentRequest: !_this2.state.showSentRequest });
 							} },
 						'Sent request ',
 						_react2.default.createElement(
 							'span',
-							{ className: "counter" + (!this.state.showSentRequest ? "" : " hidden") },
+							{ className: "counter" + (sentTradePending.length && !this.state.showSentRequest ? "" : " hidden") },
 							sentTradePending.length ? sentTradePending.length : null
+						),
+						_react2.default.createElement(
+							'span',
+							{ className: this.state.showSentRequest ? "hidden" : "" },
+							' (click to view)'
 						)
 					),
 					_react2.default.createElement(
@@ -435,7 +445,7 @@ var Books = (_dec = (0, _reactRedux.connect)(function (state) {
 					_react2.default.createElement(
 						'h1',
 						null,
-						'Browse books'
+						'Browse books (click to send request)'
 					),
 					_react2.default.createElement(
 						'div',

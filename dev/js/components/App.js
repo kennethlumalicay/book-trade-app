@@ -7,7 +7,7 @@ class App extends Component {
 	    <section id="app" className='flex-col flex-center'>
     		<Routes />
     		<div id="footer">
-    			<p>App made by <a href="https://kennethlumalicay.github.io/portfolio/">Kenneth Malicay</a></p>
+    			<p>App made by <a href="https://kennethlumalicay.github.io/portfolio/" target="_blank">Kenneth Malicay</a></p>
     		</div>
 	    </section>
     );

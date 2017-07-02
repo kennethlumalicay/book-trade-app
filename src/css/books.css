@@ -1,5 +1,8 @@
 .text-input {
-	font-size: 1.6em;
+	font-size: 2em;
+	border: 1px solid rgba(0,0,0,1);
+	padding: 5px 10px;
+	margin-top: 10px;
 }
 .book-container {
 	display: flex;
@@ -43,14 +46,15 @@
 	flex-wrap: wrap;
 }
 .book-list > img, .book-list > div > img {
-	transform: scale(0.9,0.9);
-	transition: all 0.5s ease-in-out;
+	box-shadow: 0px 5px 10px rgba(0,0,0,1);
+	transition: all 0.25s ease-in-out;
 }
 .book-list > img:hover, .book-list > div > img:hover {
-	transform: scale(1,1);
+	transform: scale(1.05,1.05);
 }
 .book-list > * {
 	text-align: center;
+	margin: 5px;
 }
 .hidden {
 	display: none;
@@ -60,10 +64,20 @@
 	background-color: rgba(95,255,95,1);
 }
 .request-closed {
-	background-color: rgba(0,0,0,0.3)
+	background-color: rgba(0,0,0,0.3);
 }
 .pending {
 	background-color: rgba(0,155,0,0.6);
+}
+.h1-click {
+	cursor: pointer;
+}
+.counter {
+	font-size: 0.6em;
+	padding: 0px 10px;
+	border-radius: 50%;
+	border: 2px solid rgba(0,0,0,0.6);
+	background-color: rgba(95,95,255,1);
 }
 .modal {
 	position: fixed;
@@ -85,7 +99,7 @@
 	align-items: center;
 	flex-direction: column;
 	border-radius: 10px;
-	box-shadow: -2px 2px 15px rgba(0,0,0,1);
+	box-shadow: 0px 5px 10px rgba(0,0,0,1);
 	padding: 10px;
 }
 .modal-div > img {

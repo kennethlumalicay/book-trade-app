@@ -47,7 +47,7 @@ var App = function (_Component) {
                   'App made by ',
                   _react2.default.createElement(
                      'a',
-                     { href: 'https://kennethlumalicay.github.io/portfolio/' },
+                     { href: 'https://kennethlumalicay.github.io/portfolio/', target: '_blank' },
                      'Kenneth Malicay'
                   )
                )

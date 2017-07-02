@@ -198,18 +198,19 @@ class Books extends Component {
 		return (
 			<section id="books">
 				<div className="book-container">
-					<h1>My books</h1>
+					<h1>My books (click to remove)</h1>
 					<div className="book-list">
 						{renderMyBooks}
 					</div>
-					<input type="text" className="text-input" placeholder="Add book" onKeyDown={this.addBook.bind(this)}/>
+					<input type="text" className="text-input" placeholder="Search book here" onKeyDown={this.addBook.bind(this)}/>
 				</div>
 				<div className={"book-container"
 					+ (myTrade.length ? "":" hidden")
 					+ (this.state.showReceivedRequest ? " request-open":(" request-closed" + (myTradePending.length ? " pending" : "")))
 				}>
-					<h1 onClick={()=>this.setState({showReceivedRequest:!this.state.showReceivedRequest})}>
-					Received request <span className={"counter" + (!this.state.showReceivedRequest ? "":" hidden")}>{myTradePending.length ? myTradePending.length : null}</span></h1>
+					<h1 className="h1-click" onClick={()=>this.setState({showReceivedRequest:!this.state.showReceivedRequest})}>
+					Received request <span className={"counter" + (myTradePending.length && !this.state.showReceivedRequest ? "":" hidden")}>{myTradePending.length ? myTradePending.length : null}</span>
+					<span className={this.state.showReceivedRequest ? "hidden" : ""}> (click to view)</span></h1>
 					<div className={this.state.showReceivedRequest ? "":"hidden"}>
 						<div className="book-outer-container">
 							<div className={"book-inner-container " + (renderMyTradeApproved.length ? "":"hidden")}>
@@ -231,8 +232,9 @@ class Books extends Component {
 					+ (sentTrade.length ? "":" hidden")
 					+ (this.state.showSentRequest ? " request-open":(" request-closed" + (sentTradePending.length ? " pending" : "")))
 				}>
-					<h1 onClick={()=>this.setState({showSentRequest:!this.state.showSentRequest})}>
-					Sent request <span className={"counter" + (!this.state.showSentRequest ? "":" hidden")}>{sentTradePending.length ? sentTradePending.length :null}</span></h1>
+					<h1 className="h1-click" onClick={()=>this.setState({showSentRequest:!this.state.showSentRequest})}>
+					Sent request <span className={"counter" + (sentTradePending.length && !this.state.showSentRequest ? "":" hidden")}>{sentTradePending.length ? sentTradePending.length :null}</span>
+					<span className={this.state.showSentRequest ? "hidden" : ""}> (click to view)</span></h1>
 					<div className={this.state.showSentRequest ? "":"hidden"}>
 						<div className="book-outer-container">
 							<div className={"book-inner-container " + (renderSentTradeApproved.length ? "":"hidden")}>
@@ -257,7 +259,7 @@ class Books extends Component {
 					</div>
 				</div>
 				<div className="book-container">
-					<h1>Browse books</h1>
+					<h1>Browse books (click to send request)</h1>
 					<div className="book-list">
 						{renderAllBooks}
 					</div>
