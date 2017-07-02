@@ -61,7 +61,7 @@
 	opacity: 0;
 }
 .request-open {
-	background-color: rgba(95,255,95,1);
+	background-color: rgba(73,204,89,1);
 }
 .request-closed {
 	background-color: rgba(0,0,0,0.3);
