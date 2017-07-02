@@ -1,16 +1,14 @@
 # Book Trade App
-Website: 
+Website: https://book-trade-app-klm.herokuapp.com
 
 This is a project I made for FCC.
 
-In this project I learned:
-
 I got to practice:
 * React
-* Express js
 * Redux
-* MongoDB
 * Node js
+* Express js
+* MongoDB
 * How to make a single page app
 
 I'm giving credits to the following for some educational reference that helped me make this app:
