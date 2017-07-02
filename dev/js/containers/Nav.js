@@ -34,7 +34,7 @@ class Nav extends Component {
 		if(this.state.open) {
 			render = (
 					<div className="flex-col" onClick={this.navClose.bind(this)}>
-						<Link to="/" className="navlink">Books</Link>
+						{/*<Link to="/" className="navlink">Books</Link>*/}
 						<Link to="/settings" className="navlink">Settings</Link>
 						<a href="/signout" className="navlink">Signout</a>
 					</div>
