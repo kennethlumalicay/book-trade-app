@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import * as actionCreators from './../actions/actions.js';
-import Modal from 'react-modal';
 
 @connect(
 	state => ({
@@ -182,7 +181,7 @@ class Books extends Component {
 				{modalBook.book.request.map((e,i)=>
 					<div key={i}>
 						<span>{e.username}</span>
-						<button className="accept-btn"
+						<button className="modal-btn"
 							data-userId={e.userId}
 							data-bookId={modalBook.book.bookId}
 							onClick={this.acceptRequest.bind(this)}
@@ -263,16 +262,13 @@ class Books extends Component {
 						{renderAllBooks}
 					</div>
 				</div>
-				<Modal
-					isOpen={this.state.requestModalOpen}
-					contentLabel="modal"
-				>
+				<div className={(this.state.requestModalOpen ? "modal":" hidden")}>
 					{modalRender}
-					<button className="cancel-btn"
+					<button className="modal-btn"
 						onClick={()=>{this.setState({requestModalOpen:false})}}>
 						Cancel
 					</button>
-				</Modal>
+				</div>
 			</section>
     )
   }

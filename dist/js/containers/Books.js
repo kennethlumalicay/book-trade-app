@@ -18,10 +18,6 @@ var _actions = require('./../actions/actions.js');
 
 var actionCreators = _interopRequireWildcard(_actions);
 
-var _reactModal = require('react-modal');
-
-var _reactModal2 = _interopRequireDefault(_reactModal);
-
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -284,7 +280,7 @@ var Books = (_dec = (0, _reactRedux.connect)(function (state) {
 						),
 						_react2.default.createElement(
 							'button',
-							{ className: 'accept-btn',
+							{ className: 'modal-btn',
 								'data-userId': e.userId,
 								'data-bookId': modalBook.book.bookId,
 								onClick: _this2.acceptRequest.bind(_this2)
@@ -448,15 +444,12 @@ var Books = (_dec = (0, _reactRedux.connect)(function (state) {
 					)
 				),
 				_react2.default.createElement(
-					_reactModal2.default,
-					{
-						isOpen: this.state.requestModalOpen,
-						contentLabel: 'modal'
-					},
+					'div',
+					{ className: this.state.requestModalOpen ? "modal" : " hidden" },
 					modalRender,
 					_react2.default.createElement(
 						'button',
-						{ className: 'cancel-btn',
+						{ className: 'modal-btn',
 							onClick: function onClick() {
 								_this2.setState({ requestModalOpen: false });
 							} },
