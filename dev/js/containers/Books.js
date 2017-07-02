@@ -206,8 +206,7 @@ class Books extends Component {
 				</div>
 				<div className={"book-container"
 					+ (myTrade.length ? "":" hidden")
-					+ (this.state.showReceivedRequest ? " request-open":" request-closed")
-					+ (this.myTradePending.length ? " pending")
+					+ (this.state.showReceivedRequest ? " request-open":(" request-closed" + (myTradePending.length ? " pending" : "")))
 				}>
 					<h1 onClick={()=>this.setState({showReceivedRequest:!this.state.showReceivedRequest})}>
 					Received request <span className={"counter" + (!this.state.showReceivedRequest ? "":" hidden")}>{myTradePending.length ? myTradePending.length : null}</span></h1>
@@ -230,8 +229,7 @@ class Books extends Component {
 				</div>
 				<div className={"book-container"
 					+ (sentTrade.length ? "":" hidden")
-					+ (this.state.showSentRequest ? " request-open":" request-closed")
-					+ (this.sentTradePending.length ? " pending")
+					+ (this.state.showSentRequest ? " request-open":(" request-closed" + (sentTradePending.length ? " pending" : "")))
 				}>
 					<h1 onClick={()=>this.setState({showSentRequest:!this.state.showSentRequest})}>
 					Sent request <span className={"counter" + (!this.state.showSentRequest ? "":" hidden")}>{sentTradePending.length ? sentTradePending.length :null}</span></h1>

@@ -313,7 +313,7 @@ var Books = (_dec = (0, _reactRedux.connect)(function (state) {
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: "book-container" + (myTrade.length ? "" : " hidden") + (this.state.showReceivedRequest ? " request-open" : " request-closed") },
+					{ className: "book-container" + (myTrade.length ? "" : " hidden") + (this.state.showReceivedRequest ? " request-open" : " request-closed" + (myTradePending.length ? " pending" : "")) },
 					_react2.default.createElement(
 						'h1',
 						{ onClick: function onClick() {
@@ -365,7 +365,7 @@ var Books = (_dec = (0, _reactRedux.connect)(function (state) {
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: "book-container" + (sentTrade.length ? "" : " hidden") + (this.state.showSentRequest ? " request-open" : " request-closed") },
+					{ className: "book-container" + (sentTrade.length ? "" : " hidden") + (this.state.showSentRequest ? " request-open" : " request-closed" + (sentTradePending.length ? " pending" : "")) },
 					_react2.default.createElement(
 						'h1',
 						{ onClick: function onClick() {
