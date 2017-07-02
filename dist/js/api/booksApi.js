@@ -35,7 +35,6 @@ function addBook(query, cb) {
 function removeBook(query, cb) {
 	_books2.default.findOneAndRemove({ 'book.bookId': query.bookId }, function (err) {
 		if (err) console.log(err);
-		console.log('removed');
 		done(cb);
 	});
 }

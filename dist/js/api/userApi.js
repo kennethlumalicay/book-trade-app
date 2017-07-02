@@ -43,7 +43,6 @@ function addBookOwned(query, cb) {
 function removeBookOwned(query, cb) {
 	_users2.default.findOne({ 'user.id': query.userId }, function (err, data) {
 		if (err) console.log(err);
-		console.log('user.books from userApi', data.user.books);
 		data.user.books.owned = data.user.books.owned.filter(function (e) {
 			return e !== query.bookId;
 		});
