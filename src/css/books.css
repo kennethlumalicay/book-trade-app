@@ -77,12 +77,9 @@
 	flex-direction: column;
 	font-size: 1.5em;
 }
-.modal > button {
-	margin-top: 5px;
-}
 .modal-div {
 	margin-top: 50px;
-	background-color: rgba(222,222,222,0.95);
+	background-color: rgba(255,255,255,0.95);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -93,6 +90,11 @@
 }
 .modal-div > img {
 	margin-bottom: 5px;
+	border: 2px solid rgba(0,0,0,1);
+}
+.modal > button {
+	margin-top: 5px;
+	border: 2px solid rgba(0,0,0,1);
 }
 .modal-div > div > button {
 	margin-left: 10px;
@@ -107,9 +109,9 @@
 	cursor: pointer;
 	font-size: 1em;
 	font-weight: 900;
-	font-family: serif;
+	font-family: 'Spectral', serif;
 	transition: all 0.5s ease-in-out;
 }
 .modal-btn:hover {
-	box-shadow: -2px 0px 0px rgba(0,0,0,1), 2px 0px 0px rgba(0,0,0,1);
+	box-shadow: -4px 0px 0px rgba(0,0,0,1), 4px 0px 0px rgba(0,0,0,1);
 }

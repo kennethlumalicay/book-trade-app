@@ -20,7 +20,6 @@ export function addBook(query, cb) {
 export function removeBook(query, cb) {
 	Books.findOneAndRemove({ 'book.bookId': query.bookId }, err => {
 		if(err) console.log(err);
-		console.log('removed');
 		done(cb);
 	});
 }

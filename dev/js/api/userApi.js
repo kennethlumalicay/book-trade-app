@@ -28,7 +28,6 @@ export function addBookOwned(query, cb) {
 export function removeBookOwned(query, cb) {
 	Users.findOne({'user.id': query.userId}, (err,data) => {
 		if(err) console.log(err);
-		console.log('user.books from userApi', data.user.books);
 		data.user.books.owned = data.user.books.owned.filter(e => e !== query.bookId);
 		data.user.save(err => {
 			if(err) console.log(err);

@@ -31,9 +31,7 @@ module.exports = function (app, passport) {
 
 	app.route('/api/user/addBookOwned')
 		.get(function (req, res) {
-			console.log('req.query user',req.query);
 			user.addBookOwned(req.query, e => {
-				console.log('user/addBookOwned e',e);
 				res.send(e);
 			});
 		});
@@ -57,9 +55,7 @@ module.exports = function (app, passport) {
 	// -- BOOKS API --
 	app.route('/api/books/addBook')
 		.get(function (req, res) {
-			console.log('req.query books',req.query);
 			books.addBook(req.query, e => {
-				console.log('books/addBook e',e);
 				res.send(e);
 			});
 		});
