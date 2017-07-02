@@ -1,6 +1,11 @@
 # Book Trade App
 Website: https://book-trade-app-klm.herokuapp.com
 
+In this app you can:
+* Post book for trades!
+* Accept trade request for your books.
+* Send trade request on books you like.
+
 This is a project I made for FCC.
 
 I got to practice:
@@ -9,6 +14,5 @@ I got to practice:
 * Node js
 * Express js
 * MongoDB
+* Passport
 * How to make a single page app
-
-I'm giving credits to the following for some educational reference that helped me make this app:
