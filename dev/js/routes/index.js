@@ -23,9 +23,10 @@ module.exports = function (app, passport) {
 			failureRedirect: '/'
 		}));
 
+	// -- USER API --
 	app.route('/api/user/update')
 		.get(function (req, res) {
-			user.updateUser(req.query, e => res.send(e));
+			user.updateUser(req.query, e => res.redirect('/'));
 		});
 
 	app.route('/api/user/addBookOwned')
@@ -51,7 +52,9 @@ module.exports = function (app, passport) {
 		.get(function (req, res) {
 			user.removeBookRequested(req.query, e => res.send(e));
 		});
+	// -- END OF USER API --
 
+	// -- BOOKS API --
 	app.route('/api/books/addBook')
 		.get(function (req, res) {
 			console.log('req.query books',req.query);
@@ -80,4 +83,5 @@ module.exports = function (app, passport) {
 		.get(function (req, res) {
 			books.acceptRequest(req.query, e => res.send(e));
 		});
+	// -- END OF BOOKS API --
 };

@@ -16,6 +16,8 @@ require('dotenv').load();
 import App from './js/components/App.js';
 import Store from './store.js';
 import routes from './js/routes/index.js';
+import Books from './js/models/books.js';
+import Users from './js/models/users.js';
 require('./js/config/passport')(passport);
 
 // Express app
@@ -58,23 +60,32 @@ routes(app, passport);
 // https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md
 app.use(handleRender);
 function handleRender(req, res) {
-  let initialState = {
-    'user': req.user ? req.user.user : null
-  };
 
-  const store = Store(initialState);
-  const context = {};
+  Books.find((err, books) => {
+    if(err) console.log(err);
+    Users.findOne({ 'user.id': req.user ? req.user.user.id : null }, (err, user) => {
+      if(err) console.log(err);
+      let initialState = {
+        user: user ? user : null,
+        books: books ? books : null
+      };
 
-  const html = renderToString(
-    <Provider store={store}>
-      <StaticRouter location={req.url} context={context}>
-        <App />
-      </StaticRouter>
-    </Provider>
-  );
+      const store = Store(initialState);
+      const context = {};
 
-  const preloadedState = store.getState();
-  res.send(renderFullPage(html, preloadedState));
+      const html = renderToString(
+        <Provider store={store}>
+          <StaticRouter location={req.url} context={context}>
+            <App />
+          </StaticRouter>
+        </Provider>
+      );
+
+      const preloadedState = store.getState();
+      res.send(renderFullPage(html, preloadedState));
+      
+    });
+  });
 }
 
 function renderFullPage(html, preloadedState) {
