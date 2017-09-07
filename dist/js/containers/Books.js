@@ -298,7 +298,7 @@ var Books = (_dec = (0, _reactRedux.connect)(function (state) {
 				{ id: 'books' },
 				_react2.default.createElement(
 					'div',
-					{ className: 'book-container' },
+					{ className: 'book-container', id: 'my-books' },
 					_react2.default.createElement(
 						'h1',
 						null,
@@ -441,7 +441,7 @@ var Books = (_dec = (0, _reactRedux.connect)(function (state) {
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'book-container' },
+					{ className: 'book-container', id: 'all-books' },
 					_react2.default.createElement(
 						'h1',
 						null,

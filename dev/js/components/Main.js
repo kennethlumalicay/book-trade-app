@@ -13,6 +13,9 @@ class Main extends Component {
 	    		</div>
 	    		<a id="login-btn" href='/login'>Start trading.</a>
 	    	</div>
+    		<div id="footer">
+    			<p>App made by <a href="https://kennethlumalicay.github.io/portfolio/" target="_blank">Kenneth Malicay</a></p>
+    		</div>
 	    </section>
     );
   }

@@ -6,9 +6,6 @@ class App extends Component {
 		return (
 	    <section id="app" className='flex-col flex-center'>
     		<Routes />
-    		<div id="footer">
-    			<p>App made by <a href="https://kennethlumalicay.github.io/portfolio/" target="_blank">Kenneth Malicay</a></p>
-    		</div>
 	    </section>
     );
   }

@@ -197,7 +197,7 @@ class Books extends Component {
 		// render
 		return (
 			<section id="books">
-				<div className="book-container">
+				<div className="book-container" id="my-books">
 					<h1>My books (click to remove)</h1>
 					<div className="book-list">
 						{renderMyBooks}
@@ -258,7 +258,7 @@ class Books extends Component {
 						</div>
 					</div>
 				</div>
-				<div className="book-container">
+				<div className="book-container" id="all-books">
 					<h1>Browse books (click to send request)</h1>
 					<div className="book-list">
 						{renderAllBooks}

@@ -27,18 +27,20 @@ body, html {
 #footer {
 	font-size: 1.3em;
 	text-align: center;
-	color: rgba(0,0,0,1);
+	color: rgba(244,244,244,1);
 	margin-top: 25px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
 }
 #footer > p > a {
-	color: rgba(0,0,0,1);
+	color: rgba(244,244,244,1);
 	padding: 0px 5px;
-	border-radius: 10px;
+	border-radius: 2px;
 	text-decoration: none;
 	transition: all 0.5s ease-in-out;
 }
 #footer > p > a:visited {
-	color: rgba(0,0,0,1);
+	color: rgba(244,244,244,1);
 }
 #footer > p > a:hover {
 	background-color: rgba(73,204,89,1);
@@ -57,21 +59,28 @@ p {
 	padding: 0;
 }
 #main {
-
+	background-image: url('./../img/books-bg.jpg');
+	background-size: cover;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
 }
 #header {
 	font-size: 3.8em;
 	padding: 30px 0px;
-	background-color: rgba(73,204,89,1);
+	background-color: rgba(73,204,89,0.8);
 	font-family: 'Megrim', cursive;
 	color: rgba(255,255,255,1);
 	width: 100%;
+	box-shadow: 0px 2px 10px rgba(0,0,0,0.5);
 }
 #header > h1 {
 	line-height: 0.7em;
 }
 #main-content {
-	color: rgba(0,0,0,1);
+	color: rgba(255,255,255,1);
 	width: 100%;
 }
 #todo {
@@ -84,13 +93,14 @@ p {
 	align-items: flex-end;
 }
 #todo > p {
-	margin: 10px 5px;
+	margin: 5px 25px;
 	min-width: 30%;
 	max-width: 390px;
-	padding: 25px 10px;
-	box-shadow: -10px 2px 0px rgba(73,204,89,1);
+	padding: 15px 10px;
+	box-shadow: 0px 2px 10px rgba(0,0,0,0.5);
 	border-radius: 10px;
 	font-size: 1.5em;
+	background-color: rgba(73,204,89,0.8);
 }
 #login-btn {
 	font-weight: 900;
@@ -100,17 +110,18 @@ p {
 	text-decoration: none;
 	color: rgba(0,0,0,1);
 	border-radius: 10px;
-	background-color: rgba(73,204,89,1);
+	background-color: rgba(73,204,89,0.8);
 	transition: all 0.5s ease-in-out;
 	animation-name: wiggle;
 	animation-duration: 8s;
 	animation-iteration-count: infinite;
+	box-shadow: 0px 2px 10px rgba(0,0,0,0.5);
 }
 #login-btn:visited {
 	color: rgba(255,255,255,1);
 }
 #login-btn:hover {
-	box-shadow: -5px 0px 0px rgba(50,130,255,0.6), 5px 0px 0px rgba(50,130,255,0.6);
+	box-shadow: -5px 0px 0px rgba(50,130,255,0.6), 5px 0px 0px rgba(50,130,255,0.6), 0px 2px 10px rgba(0,0,0,0.5);
 }
 #login-btn:active {
 }
